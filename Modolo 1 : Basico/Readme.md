@@ -11,3 +11,9 @@ Para iniciar o banco de dados no terminal aqui no linux rodamos
 depois 
 
 `sudo mysql -u root`
+
+## CRIANDO AS TABELAS E IMPORTANDO OS DADOS DOS ARQUIVOS CSV
+
+`mysqlimport --local -u root -p --socket=/run/mysqld/mysqld.sock LINX /media/william-coelho/8be9fd1b-3932-470d-8061-2d265519091e/APRENDENDO/Banco\ de\ dados/Modolo\ 1\ :\ Basico/Dados/customer.csv`
+> Comando para importar os dados para a tabela no banco de dados LINX.
+Obs: a tabela foi criada posteriormente com o arquivo Create_customer.sql
