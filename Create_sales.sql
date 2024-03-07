@@ -1,5 +1,6 @@
 -- importando do csv no terminal linux 
--- mysqlimport --local -u root -p --socket=/run/mysqld/mysqld.sock --columns=row_id;order_id;order_date;ship_date;ship_mode;customer_id;product_id --fields-terminated-by=';' LINX /media/william-coelho/8be9fd1b-3932-470d-8061-2d265519091e/APRENDENDO/Banco\ de\ dados/Modolo\ 1\ :\ Basico/Dados/sales.csv
+-- mysqlimport --local -u root -p --socket=/run/mysqld/mysqld.sock --columns="row_id,order_id,order_date,ship_date,ship_mode,customer_id,product_id" --fields-terminated-by=';' LINX /media/william-coelho/8be9fd1b-3932-470d-8061-2d265519091e/APRENDENDO/Banco\ de\ dados/Modolo\ 1\ :\ Basico/Dados/sales.csv
+
 CREATE TABLE sales (
     row_id INT,
     order_id VARCHAR(30),
