@@ -44,12 +44,21 @@
 
 -- Mão na massa
 
-SELECT 
-sub_category,
-category,
-sum(price) as VALOR_TOTAL,
-avg(price) as VALOR_MEDIO
-FROM products 
-WHERE price BETWEEN 10 AND 1000
-GROUP BY sub_category, category
-ORDER BY 4 LIMIT 8;
+--SELECT 
+--sub_category,
+--category,
+--sum(price) as VALOR_TOTAL,
+--avg(price) as VALOR_MEDIO
+--FROM products 
+--WHERE price BETWEEN 10 AND 1000
+--GROUP BY sub_category, category
+--ORDER BY 4 LIMIT 8;
+
+-- trabalhanod com o left join
+
+SELECT
+product_name,
+price
+FROM products
+LEFT JOIN sales
+ORDER BY price DESC
