@@ -55,10 +55,16 @@
 --ORDER BY 4 LIMIT 8;
 
 -- trabalhanod com o left join
-
+--COUNT(DISTINCT S.order_id) AS QTDE_VENDA
 SELECT
-product_name,
-price
-FROM products
-LEFT JOIN sales
-ORDER BY price DESC
+product_name AS Nome_produto, 
+price AS Valor_vendas,
+COUNT(S.order_id) AS Quantidade_vendas
+FROM products  P 
+LEFT JOIN sales S
+    ON S.product_id = P.product_id 
+GROUP BY 
+P.product_name,
+P.price
+ORDER BY P.price DESC
+LIMIT 5;
