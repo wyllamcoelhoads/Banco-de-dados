@@ -22,3 +22,34 @@
 --WHERE price <= 1000 
 --ORDER BY price DESC LIMIT 10;
 
+-- Quantos produtos temos na base, VALOR MEDIO MAIOR E MENOR 
+
+--SELECT 
+--COUNT(*) AS QUANTIDADE_PRODUTOS,
+--COUNT(DISTINCT product_id) AS TOTAL_PRODUTOS,
+--AVG(price) MEDIA_VALOR,
+--MAX(price) MAIOR_VALOR,
+--MIN(price) MENOR_VALOR
+--FROM products;
+
+-- Agregações por categoria 
+
+--SELECT category,
+--COUNT(*) AS QUANTIDADE_PRODUTOS,
+--COUNT(DISTINCT product_id) AS TOTAL_PRODUTOS,
+--AVG(price) MEDIA_VALOR,
+--MAX(price) MAIOR_VALOR,
+--MIN(price) MENOR_VALOR
+--FROM products AS p GROUP BY category;
+
+-- Mão na massa
+
+SELECT 
+sub_category,
+category,
+sum(price) as VALOR_TOTAL,
+avg(price) as VALOR_MEDIO
+FROM products 
+WHERE price BETWEEN 10 AND 1000
+GROUP BY sub_category, category
+ORDER BY 4 LIMIT 8;
